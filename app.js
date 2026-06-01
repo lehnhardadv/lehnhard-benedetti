@@ -1,9 +1,7 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
-
-// Registrar plugins do GSAP
-gsap.registerPlugin(ScrollTrigger);
+// Registrar plugins do GSAP se estiverem carregados
+if (window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const init = () => {
 
@@ -11,7 +9,7 @@ const init = () => {
   // LENIS SMOOTH SCROLL INITIALIZATION
   // ==========================================
   let lenis;
-  if (Lenis) {
+  if (window.Lenis) {
     lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -20,7 +18,7 @@ const init = () => {
       touchMultiplier: 1.5,
     });
 
-    if (gsap && ScrollTrigger) {
+    if (window.gsap && window.ScrollTrigger) {
       // Atualiza ScrollTrigger quando o Lenis roda o scroll
       lenis.on('scroll', ScrollTrigger.update);
 
@@ -50,7 +48,7 @@ const init = () => {
     const line2 = typingTitle.querySelector('.line-2');
     
     if (line1 && line2) {
-      if (gsap) {
+      if (window.gsap) {
         // --- FLUXO GSAP (Animações de entrada fluidas e rápidas) ---
         document.body.classList.add('gsap-active');
         
@@ -141,7 +139,7 @@ const init = () => {
   // ==========================================
   const revealElements = document.querySelectorAll('.reveal');
   
-  if (gsap && ScrollTrigger) {
+  if (window.gsap && window.ScrollTrigger) {
     // 1. Animação Staggered para os cards de serviços (Áreas de Domínio)
     gsap.fromTo(".service-card", 
       { opacity: 0, y: 50, scale: 0.95 },
