@@ -17,7 +17,7 @@
   <meta property="og:title" content="Lehnhard Benedetti | Advocacia Boutique">
   <meta property="og:description"
     content="Estratégia jurídica para quem projeta o futuro. Do agronegócio de elite às startups de tecnologia.">
-  <meta property="og:image" content="assets/hero_bg.png">
+  <meta property="og:image" content="/assets/hero_bg.png">
   <meta property="og:url" content="https://lehnhardbenedetti.com.br">
   <meta property="og:type" content="website">
 
@@ -26,7 +26,7 @@
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath stroke='%23C5A059' stroke-width='2' fill='none' d='M12 2L2 22h20z'/%3E%3C/svg%3E">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
   <header id="main-header">
     <div class="nav-container">
       <a href="#hero" class="logo" id="header-logo" aria-label="Lehnhard Benedetti Home">
-        <img src="assets/logonav.png" alt="Lehnhard Benedetti Advocacia Boutique" class="logo-img">
+        <img src="/assets/logonav.png" alt="Lehnhard Benedetti Advocacia Boutique" class="logo-img">
       </a>
 
       <nav id="navbar">
@@ -65,7 +65,7 @@
        ========================================== */ -->
   <div class="video-bg-fixed" aria-hidden="true">
     <video autoplay loop muted playsinline>
-      <source src="assets/fundo2.mp4" type="video/mp4">
+      <source src="/assets/fundo2.mp4" type="video/mp4">
     </video>
     <!-- Overlay escuro fixo: garante contraste e legibilidade
          do texto branco que scrollará por cima -->
@@ -277,8 +277,8 @@
     <div class="section-container">
       <div class="manifesto-grid">
         <div class="manifesto-video-wrapper reveal">
-          <video id="manifesto-video-inline" controls loop playsinline poster="assets/manifesto_bg.png">
-            <source src="assets/video_kael.mp4" type="video/mp4">
+          <video id="manifesto-video-inline" controls loop playsinline poster="/assets/hero_bg.png">
+            <source src="/assets/video_kael.mp4" type="video/mp4">
             Seu navegador não suporta este vídeo.
           </video>
         </div>
@@ -333,7 +333,7 @@
         <div class="footer-info reveal reveal-delay-2">
           <div class="footer-brand">
             <a href="#hero" class="logo">
-              <img src="assets/logonav.png" alt="Lehnhard Benedetti Advocacia Boutique" class="logo-img">
+              <img src="/assets/logonav.png" alt="Lehnhard Benedetti Advocacia Boutique" class="logo-img">
             </a>
           </div>
 
@@ -393,10 +393,7 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="app.js"></script>
+  <script type="module" src="/app.js"></script>
 </body>
 
 </html>

@@ -1,10 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
+
+// Registrar plugins do GSAP
+gsap.registerPlugin(ScrollTrigger);
+
+const init = () => {
 
   // ==========================================
   // LENIS SMOOTH SCROLL INITIALIZATION
   // ==========================================
   let lenis;
-  if (window.Lenis) {
+  if (Lenis) {
     lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -13,9 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       touchMultiplier: 1.5,
     });
 
-    if (window.gsap && window.ScrollTrigger) {
-      gsap.registerPlugin(ScrollTrigger);
-      
+    if (gsap && ScrollTrigger) {
       // Atualiza ScrollTrigger quando o Lenis roda o scroll
       lenis.on('scroll', ScrollTrigger.update);
 
@@ -45,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const line2 = typingTitle.querySelector('.line-2');
     
     if (line1 && line2) {
-      if (window.gsap) {
+      if (gsap) {
         // --- FLUXO GSAP (Animações de entrada fluidas e rápidas) ---
         document.body.classList.add('gsap-active');
         
@@ -136,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   const revealElements = document.querySelectorAll('.reveal');
   
-  if (window.gsap && window.ScrollTrigger) {
+  if (gsap && ScrollTrigger) {
     // 1. Animação Staggered para os cards de serviços (Áreas de Domínio)
     gsap.fromTo(".service-card", 
       { opacity: 0, y: 50, scale: 0.95 },
@@ -402,4 +407,11 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Aviso: Esta funcionalidade do blog/atendimento simulado é um demonstrativo visual e não está ativa nesta demonstração estática.");
     });
   });
-});
+};
+
+// Executa a inicialização de forma segura contra race conditions do DOM
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
