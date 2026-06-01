@@ -1,0 +1,14 @@
+{
+  "name": "lehnhard-benedetti-landing",
+  "version": "1.0.0",
+  "description": "Boutique Law Firm Luxury Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}
