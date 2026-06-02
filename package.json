@@ -1,0 +1,9 @@
+{
+  "name": "lehnhard-benedetti-landing",
+  "version": "1.0.0",
+  "description": "Boutique Law Firm Luxury Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js"
+  }
+}
