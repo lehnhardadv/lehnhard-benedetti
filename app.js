@@ -61,6 +61,7 @@ const init = () => {
         gsap.set(".hero-actions", { y: 20, opacity: 0 });
         gsap.set(".btn-primary", { scale: 0.9, opacity: 0 });
         gsap.set(".btn-secondary", { scale: 0.9, opacity: 0 });
+        gsap.set(".hero-image", { scale: 0.95, opacity: 0 });
         
         const tl = gsap.timeline();
         
@@ -70,7 +71,8 @@ const init = () => {
         
         // 2. Animação de entrada por Fade-in/Slide-up das linhas do título (Staggered)
         tl.to(line1, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", clearProps: "transform,opacity" }, "-=0.3")
-          .to(line2, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", clearProps: "transform,opacity" }, "-=0.55");
+          .to(line2, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", clearProps: "transform,opacity" }, "-=0.55")
+          .to(".hero-image", { scale: 1, opacity: 1, duration: 1.2, ease: "power3.out", clearProps: "transform,opacity,scale" }, "-=0.7");
         
         // 3. Surgimento da Descrição (suave e rápida)
         tl.to(".hero-description", {
